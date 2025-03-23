@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VM</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="landingpage">
+      <div class="navbar">
+        <a class="navlogo">VM Manager</a>
+        <button class="hamburger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+        <div class="navlinkwrap">
+          <span class="navlink selectedlink">Home</span>
+          
+          <span class="navlink"><a href="#menu">Menu</a></span>
+
+          <span class="navlink"><a href="#runScript">Launch</a></span>
+          <!--<span class="navlink"><a href="#about">About</a></span>-->
+        </div>
+      </div>
+      <div class="box">
+        <div class="infobox">
+          <p class="infobox-boldtext">
+           VM Manager
+          </p>
+          <p class="infobox-slimtext">
+            VM Manager is a convenient tool for centralized management of computing and network resources. Manage a virtual environment to host any company services.
+
+          </p>
+          <div class="infobox-btnwrapper">
+            <button class="infobox-explorebtn selected" onclick="location.href='works.html'">Explore</button>
+          </div>
+        </div>
+        <div class="display">
+          <img class="display-nft" src="vmimage.jpg" alt="unsplash-OG44d93i-NJk" border="0">
+          <div class="infowrapper">
+            <div class="info">
+              <img class="info-img" src="images.jpeg" alt="unsplash-OG44d93i-NJk" border="0">
+              <div>
+                <p>VM Monitor</p>
+                <p>CoreVitals</p>
+              </div>
+      </div>
+            <div class="info2">
+             
+              <div class="iconwrapper">
+                <svg width="22" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.7365 2C3.6575 2 1.5 3.8804 1.5 6.5135c0 3.1074 2.3236 5.9603 4.8612 8.1207 1.2458 1.0606 2.4954 1.9137 3.4352 2.5022.4692.2937.8593.5203 1.1305.6727L11 17.85l.0731-.0409a27.984 27.984 0 0 0 1.1304-.6727c.9399-.5885 2.1895-1.4416 3.4353-2.5022C18.1764 12.4738 20.5 9.6209 20.5 6.5135 20.5 3.8805 18.3425 2 16.2635 2c-2.1054 0-3.8008 1.389-4.552 3.6426a.75.75 0 0 1-1.423 0C9.5373 3.389 7.8418 2 5.7365 2ZM11 18.7027l.3426.6672a.7502.7502 0 0 1-.6852 0L11 18.7027ZM0 6.5135C0 3.052 2.829.5 5.7365.5 8.0298.5 9.8808 1.7262 11 3.6048 12.1192 1.7262 13.9702.5 16.2635.5 19.171.5 22 3.052 22 6.5135c0 3.8183-2.8014 7.06-5.3888 9.2628-1.3167 1.121-2.6296 2.0166-3.6116 2.6314-.4918.308-.9025.5467-1.1918.7092a19.142 19.142 0 0 1-.4301.2347l-.0248.013-.007.0036-.0021.0011c-.0003.0001-.0012.0006-.3438-.6666-.3426.6672-.3424.6673-.3426.6672l-.0033-.0017-.007-.0036-.0248-.013a19.142 19.142 0 0 1-.4301-.2347 29.324 29.324 0 0 1-1.1918-.7092c-.982-.6148-2.295-1.5104-3.6116-2.6314C2.8014 13.5735 0 10.3318 0 6.5135Z" fill="#E0E0E0"/>
+      </svg>
+                100%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="menu" class="discover">
+        <div class="discover-title">
+          <p>Menu</p><br><br>
+        </div>
+        <div class="container">
+          <div class="card" onclick="openModal('modal1')">
+              <img src="PREDICTIVE_SYSTEM_ANALYTICS.jpeg" alt="PREDICTIVE ANALYSIS">
+              <h3>PREDICTIVE ANALYSIS</h3>
+          </div>
+          <div class="card" onclick="openModal('modal2')">
+              <img src="ANOMALY_DETECTION.jpeg" alt="ANOMALY DETECTION">
+              <h3>ANOMALY DETECTION</h3>
+          </div>
+          <div class="card" onclick="openModal('modal3')">
+              <img src="PROACTIVE_ALERTS.jpeg" alt="PROACTIVE ALERTS">
+              <h3>PROACTIVE ALERTS</h3>
+          </div>
+          <div class="card" onclick="openModal('modal4')">
+              <img src="UTILIZATION_INSIGHTS.jpeg" alt="UTILIZATION INSIGHTS">
+              <h3>UTILIZATION INSIGHTS</h3>
+          </div>
+          <div class="card" onclick="openModal('modal5')">
+              <img src="PERFORMANCE_INSIGHTS.jpeg" alt="PERFORMANCE INSIGHTS">
+              <h3>PERFORMANCE INSIGHTS</h3>
+          </div>
+          <div class="card" onclick="openModal('modal6')">
+              <img src="DECISION_SUPPORT.jpeg" alt="DECISION SUPPORT">
+              <h3>DECISION SUPPORT</h3>
+          </div>
+      </div>
+      
+      <!-- Modal for Predictive System Analytics -->
+      <div id="modal1" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeModal('modal1')">&times;</span>
+              <h2>Predictive Analysis</h2>
+              <p>Effective system health monitoring prevents performance issues, downtime, and resource failures. The two major concerns in system performance management are overloaded machines and resources near depletion. Proactive monitoring, predictive analytics, and automated scaling ensure systems remain efficient and reliable.</p>
+              <ul>
+                <li><h3><strong>Overloaded Machines</strong></h3>
+                  <ol>
+                    <li><strong>High CPU Usage:</strong> When CPU usage exceeds safe thresholds, applications slow down, response times increase, and system performance degrades. Solutions include optimizing process execution, redistributing workloads, and implementing load balancing.</li>
+                    <li><strong>Memory Overload:</strong> Memory overload occurs when RAM consumption exceeds available capacity, leading to frequent swapping, slow performance, or application crashes. Preventive measures include optimizing database queries and implementing caching mechanisms.</li>
+                    <li><strong>Disk Overutilization:</strong> Disk space exhaustion slows down read/write operations. Preventive strategies include automating log cleanup and expanding storage capacity.</li>
+                    <li><strong>Threshold-Based Alerts & Scaling:</strong> Automated alerts and dynamic scaling prevent system overload by ensuring timely intervention.</li>
+                  </ol>
+                </li>
+                <li><h3><strong>Resources Near Depletion</strong></h3>
+                  <ol>
+                    <li><strong>Disk Space Prediction:</strong> Running out of disk space causes failed transactions and system crashes. Solutions include scheduled log rotation and data archiving.</li>
+                    <li><strong>Memory Utilization Forecasting:</strong> Memory shortages impact system stability. Solutions include optimizing memory-intensive operations and implementing intelligent caching strategies.</li>
+                    <li><strong>Predictive Analytics for Resource Management:</strong> Machine learning-based predictive analytics enhances system monitoring by analyzing past trends and forecasting future resource needs.</li>
+                  </ol>
+                </li>
+              </ul><br><br>
+              <button id="predictiveActionBtn" class="modal-btn">Analyze Data</button>
+          </div>
+      </div>
+      
+      <!-- Modal for ANOMALY DETECTION-->
+      <div id="modal2" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeModal('modal2')">&times;</span>
+              <h3>Anomaly Detection</h3>
+              <p>Anomaly detection is a critical aspect of system monitoring that helps identify unexpected behavior, sudden resource spikes, and potential failures before they impact operations. By analyzing patterns in system performance, anomaly detection tools can detect unusual CPU, memory, disk, or network activity, allowing administrators to take corrective action before issues escalate.</p>
+              <ol>
+                <li><strong>Sudden Spikes in Resource Utilization:</strong> A sudden increase in CPU, memory, or disk usage often indicates unoptimized processes, excessive background tasks, or malicious activities such as a cyberattack or a faulty update. If left unaddressed, these spikes can lead to system slowdowns, crashes, or security vulnerabilities. Continuous monitoring helps detect anomalies in real time, triggering alerts that allow quick intervention. Preventive measures include load balancing, process optimization, and security audits to ensure that resource spikes do not disrupt operations.</li><br>
+                <li><strong>Unexpected Downtime:</strong>Unexpected system failures, server crashes, or application freezes can disrupt business operations and result in data loss. Anomalies in system logs, error rates, or API response times often indicate an impending failure or configuration issue. Machine learning models trained on historical data can predict failures before they occur, allowing administrators to take preventive actions such as infrastructure scaling, patching, or restarting failing services.</li><br>
+                <li><strong>Unusual Network Activity:</strong> Abnormal spikes in network traffic, unexpected data transfers, or frequent failed authentication attempts may indicate a DDoS attack, unauthorized access, or a misconfigured service. Detecting anomalies in network logs helps prevent security breaches and ensures data integrity. Implementing firewall rules, intrusion detection systems (IDS), and automated response mechanisms can mitigate risks and prevent unauthorized system access.</li><br>
+                <li><strong>Predictive Anomaly Detection Using AI:</strong> Advanced machine learning algorithms analyze system metrics over time to detect anomalies before they cause failures. Time-series forecasting models can identify deviations from normal behavior, while unsupervised learning techniques such as clustering and autoencoders help uncover hidden patterns in system logs. By integrating AI-driven anomaly detection, organizations can enhance monitoring accuracy, reduce manual workload, and improve response times to potential threats.</li><br>
+              </ol><br><br>
+              <pre id="anamolydetect">Click "Detect Anomalies" to view which machine is about to fail...</pre>
+              <button id="anomalyActionBtn" class="modal-btn">Detect Anomalies</button>
+          </div>
+      </div>
+      
+      <!-- Modal for Proactive Alerts -->
+      <div id="modal3" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeModal('modal3')">&times;</span>
+              <h3>Proactive Alerts</h3>
+              <p>Proactive alerts enable real-time detection of critical system conditions, allowing administrators to take preventive action before issues impact performance. Unlike reactive alerts, which notify users after a failure occurs, proactive alerts predict potential failures and trigger warnings based on historical trends, predefined thresholds, and anomaly detection mechanisms. These alerts help maintain system stability, prevent downtime, and optimize resource utilization.</p>
+              <ol>
+                <li><strong>Predictive Memory Utilization Alerts</strong>Memory-intensive applications can lead to performance degradation if consumption exceeds safe limits. Proactive alerts analyze historical memory usage trends and predict when utilization is likely to surpass a critical threshold. By detecting early warning signs, such as a steady increase in memory consumption or frequent swapping, alerts allow administrators to optimize resource allocation, clear unnecessary processes, or scale memory resources dynamically before the system slows down or crashes.</li><br>
+                <li><strong>CPU and Load Monitoring Alerts:</strong>High CPU usage can cause delays, application failures, or complete system unresponsiveness. Proactive alerts monitor CPU load over time, detecting unusual spikes or consistent overutilization. If an alert predicts that CPU usage will exceed a critical level within a specific timeframe, administrators can optimize workload distribution, enable auto-scaling, or adjust process priorities to prevent system slowdowns. These alerts help maintain performance efficiency and prevent overload-related crashes.</li><br>
+                <li><strong>Disk Space Utilization Alerts:</strong> Running out of disk space can lead to failed write operations, application errors, and data loss. Proactive disk space alerts analyze usage trends to estimate when available storage will be exhausted. Instead of waiting for storage to run out, these alerts notify teams well in advance, enabling automated log cleanup, data archiving, and storage expansion before disk depletion affects system operations.</li><br>
+                <li><strong>System Uptime & Stability Alerts:</strong>Frequent restarts, unplanned downtimes, or irregular uptime patterns may indicate hardware failures, unstable configurations, or software bugs. Proactive uptime alerts monitor system health and detect irregular shutdown patterns before they escalate into major outages. By identifying systems with recurring instability, these alerts help administrators troubleshoot hardware issues, patch software vulnerabilities, and optimize infrastructure for improved reliability.</li><br>
+                <li><strong>Automated Alerting and Response Systems:</strong>Proactive alerts become more effective when combined with automated incident response mechanisms. AI-powered monitoring tools can analyze alerts in real-time and trigger automated responses, such as scaling resources, restarting services, or blocking suspicious activities. This reduces manual intervention and ensures faster resolution of potential issues.</li><br>
+              </ol><br><br>
+              <pre id="alertContent">Click "Set Alerts" to view live alerts...</pre>
+              <button id="alertsActionBtn" class="modal-btn">Set Alerts</button>
+          </div>
+      </div>
+      
+      <!-- Modal for Utilization Insights -->
+      <div id="modal4" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeModal('modal4')">&times;</span>
+              <h3>Utilization Insights</h3>
+              <p>This helps predict future workload patterns and resource demands for each machine, enabling efficient load balancing, capacity planning, and proactive resource allocation. By analyzing historical usage trends, seasonal variations, and real-time metrics, organizations can anticipate demand spikes, optimize infrastructure, and prevent resource shortages before they impact performance.</p>
+              <ol>
+                <li><strong>Predicting CPU Workload Trends:</strong>Understanding CPU usage patterns helps ensure optimal processing efficiency and prevent overloads. By analyzing past CPU utilization data, forecasting models can predict periods of high demand, underutilization, or potential bottlenecks. This allows administrators to pre-allocate resources, optimize task scheduling, and enable dynamic CPU scaling to handle expected workloads without overprovisioning.</li><br>
+                <li><strong>Memory Consumption Forecasting:</strong>Predicting memory usage helps prevent unexpected slowdowns and application crashes. Memory forecasting models analyze growth patterns in active processes, caching behavior, and memory leaks to determine future consumption rates. This enables preemptive memory allocation, early detection of inefficient processes, and proactive adjustments to avoid performance degradation.</li><br>
+                <li><strong>Disk Space and Storage Demand Estimation:</strong>Running out of disk space can cause data loss, application errors, and operational failures. Forecasting models evaluate storage trends by analyzing file growth rates, log accumulation, and database expansion. This allows organizations to automate storage expansion, schedule log cleanup, and optimize data retention policies to prevent sudden storage depletion.</li><br>
+                <li><strong>Network Traffic and Bandwidth Prediction:</strong>Fluctuations in network traffic can affect latency, data transfer speeds, and system responsiveness. Forecasting models track historical bandwidth usage, peak traffic hours, and application demands to predict future network loads. This enables proactive scaling of network resources, load balancing, and bandwidth allocation to maintain stable performance during high-traffic periods.</li><br>
+                <li><strong>AI-Powered Predictive Analytics for Load Balancing:</strong>Machine learning algorithms enhance forecasting accuracy by identifying hidden trends and anomaly patterns in resource utilization. AI-driven models can predict workload shifts in multi-cloud, hybrid, and on-premises environments, enabling real-time load balancing, intelligent resource scaling, and optimized infrastructure management.</li><br>
+              </ol><br><br>
+              <button id="utilizationActionBtn" class="modal-btn">VIEW INSIGHTS</button>
+          </div>
+      </div>
+      
+      <!-- Modal for Performance Insights -->
+      <div id="modal5" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeModal('modal5')">&times;</span>
+              <h3>Performance Insights</h3>
+              <p>Performance insights provide statistical summaries and visualizations of system health across all machines, offering a clear understanding of performance trends, resource consumption, and potential bottlenecks. By leveraging real-time monitoring, historical analysis, and graphical representations, organizations can identify inefficiencies, optimize resource allocation, and enhance overall system stability.</p>
+              <ol>
+                <li><strong>System-Wide Performance Metrics:</strong>Comprehensive performance summaries display CPU load, memory utilization, disk activity, and network traffic for all machines in the system. These insights help identify high-resource-consuming nodes, detect anomalies, and analyze workload distribution. By tracking key performance indicators (KPIs) over time, administrators can recognize long-term trends and optimize system efficiency.</li><br>
+                <li><strong>Interactive Visualizations and Dashboards:</strong>Graphical dashboards enhance data interpretation by presenting performance metrics in charts, heatmaps, and trend lines. These visualizations make it easier to spot recurring patterns, sudden spikes, or resource imbalances across different machines. Interactive dashboards allow users to filter data, drill down into specific metrics, and compare historical vs. real-time performance for better decision-making.</li><br>
+                <li><strong>Bottleneck Identification and Trend Analysis:</strong>By analyzing historical performance trends, organizations can detect recurring issues such as slow processing, memory leaks, or inefficient storage usage. Identifying these bottlenecks allows teams to take proactive measures, such as load balancing, optimizing queries, or scaling infrastructure before performance issues escalate.</li><br>
+                <li><strong>Predictive Performance Insights:</strong>AI-driven analytics provide forecasted system behavior, helping teams anticipate resource shortages, predict failure points, and prepare for high-demand periods. These insights enable automated capacity planning, workload redistribution, and proactive system optimization to prevent downtime and maintain efficiency.</li><br>
+              </ol><br><br>
+              <button id="performanceActionBtn" class="modal-btn">View Performance</button>
+          </div>
+      </div>
+      
+      <!-- Modal for Decision Support -->
+      <div id="modal6" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeModal('modal6')">&times;</span>
+              <h3>Decision Support</h3>
+              <p>Decision support systems provide actionable recommendations based on predicted system issues, enabling administrators to make informed choices that enhance performance, stability, and efficiency. By analyzing resource utilization trends, anomaly patterns, and predictive analytics, decision support mechanisms help proactively resolve potential problems before they impact operations.</p>
+              <ol>
+                <li><strong>Intelligent Workload Reallocation:</strong>When system performance predictions indicate an overloaded CPU, memory bottleneck, or uneven resource distribution, decision support suggests shifting workloads to underutilized nodes. This ensures optimal processing efficiency, prevents performance degradation, and reduces the risk of system crashes. Workload balancing strategies may involve auto-scaling, container orchestration, or dynamic task scheduling.</li><br>
+                <li><strong>Resource Scaling and Capacity Expansion:</strong> Predictive analytics detect when a system is approaching resource exhaustion, such as disk space running low, memory nearing capacity, or network bandwidth congestion. Based on these insights, decision support recommends adding resources, upgrading hardware, or allocating additional cloud instances to maintain smooth operations. Scaling strategies can include vertical scaling (upgrading existing machines) or horizontal scaling (adding more machines).</li><br>
+                <li><strong>Configuration Optimization for Performance Efficiency:</strong>Suboptimal system configurations can lead to slow response times, inefficient resource usage, and increased downtime. Decision support analyzes historical performance data and real-time metrics to recommend tuning parameters, adjusting caching mechanisms, optimizing database queries, or refining system policies. These improvements enhance overall system responsiveness and reduce unnecessary resource consumption.</li><br>
+                <li><strong>Automated Decision-Making with AI Integration:</strong>AI-driven decision support systems use machine learning algorithms to provide real-time recommendations and even automate corrective actions. By continuously learning from system behavior, AI can predict potential failures, suggest preemptive actions, and trigger automated responses, such as scaling resources, restarting failing services, or reallocating traffic loads to maintain performance stability.</li><br>
+              </ol>
+              <pre id="workloadpred">Click to view workload distribution...</pre>
+              <button id="decisionActionBtn" class="modal-btn">Make Decision</button>
+          </div>
+      </div>
+      
+      <script>
+          function openModal(id) {
+              document.getElementById(id).style.display = 'block';
+          }
+          function closeModal(id) {
+              document.getElementById(id).style.display = 'none';
+          }
+      </script>
+      
+      </div>
+      <br><br>
+      <!--LAUNCH BUTTON CODE-->
+      <div style="display: flex; justify-content: center; align-items: center; ">
+        <button id="runScript"  style="display: flex; align-items: center; padding: 12px 48px; border-radius: 16px; font-family: 'Poppins', sans-serif; font-size: 16px; color: white; background: rgba(48, 129, 237, 0.9); border: none; cursor: pointer;">Launch Now</button>
+        <p id="response"></p>
+
+      </div>
+      
+      <br><br><br><br>
+
+      <!--LAUNCH BUTTON CODE END-->
+      <div class="footer2"></div>
+    </div>
+    
+    <script>
+      function toggleCard(card) {
+        card.classList.toggle("open");
+      }
+    </script>
+
+<div id="image-container"></div>  <!-- This will display graphs -->
+<script>
+document.getElementById("alertsActionBtn").addEventListener("click", function() {
+    fetch("alerts.txt")  // Change this to your actual .txt file name
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("alertContent").textContent = data;
+        })
+        .catch(error => console.error("Error loading alerts:", error));
+});
+</script>
+  <script>
+document.getElementById("anomalyActionBtn").addEventListener("click", function() {
+    fetch("anamoly detect.txt")  // Change this to your actual .txt file name
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("anamolydetect").textContent = data;
+        })
+        .catch(error => console.error("Error loading alerts:", error));
+});
+</script>
+  <script>
+document.getElementById("decisionActionBtn").addEventListener("click", function() {
+    fetch("workload.txt")  // Change this to your actual .txt file name
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("workloadpred").textContent = data;
+        })
+        .catch(error => console.error("Error loading alerts:", error));
+});
+</script>
+
+
+
+
+
+    
+  </body>
+</html>

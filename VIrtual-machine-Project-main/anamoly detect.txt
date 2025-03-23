@@ -1,0 +1,81 @@
+
+R² Score: 1.0
+Machines at Risk of Failure:
+             IP  Disk Utilization (%)  Free Memory
+0    10.0.0.84                    77         2778
+1   10.0.0.186                    18          236
+6   10.0.0.236                    35          291
+7    10.0.0.85                    94          916
+12   10.0.0.98                    43           80
+14  10.0.0.100                    80           78
+15   10.0.0.22                     7         1623
+17  10.0.0.141                    99         5017
+19   10.0.0.81                     6          805
+23   10.0.0.33                    75         2843
+26   10.0.0.60                    96         1606
+28  10.0.0.179                    97         3318
+29   10.0.0.46                     7          284
+31  10.0.0.211                    65          128
+35  10.0.0.118                    87          545
+40   10.0.0.61                    95         2665
+43   10.0.0.95                    93         2870
+46   10.0.0.66                    81         4213
+48   10.0.0.15                    91          521
+49  10.0.0.203                    36           84
+51  10.0.0.237                    94         1500
+55  10.0.0.155                    44          124
+61  10.0.0.207                    23          231
+62   10.0.0.80                    46         1960
+64   10.0.0.76                    95          547
+71  10.0.0.133                    48           48
+73  10.0.0.204                    98         7763
+76   10.0.0.67                    69          881
+77  10.0.0.104                    93          321
+79  10.0.0.232                     3          286
+85  10.0.0.237                    96         2721
+88  10.0.0.210                     7          129
+91  10.0.0.230                    78          200
+94   10.0.0.94                    38          198
+95   10.0.0.30                    26          126
+98  10.0.0.243                    29           31
+99  10.0.0.171                    96          768
+
+⚠️ ALERT: The following machines need more resources to prevent failure ⚠️
+⚠️ Machine 10.0.0.84 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.186 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.236 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.85 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.98 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.100 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.22 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.141 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.81 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.33 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.60 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.179 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.46 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.211 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.118 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.61 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.95 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.66 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.15 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.203 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.237 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.155 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.207 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.80 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.76 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.133 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.204 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.67 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.104 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.232 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.237 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.210 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.230 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.94 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.30 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.243 is at risk. Consider adding more memory or balancing its workload.
+⚠️ Machine 10.0.0.171 is at risk. Consider adding more memory or balancing its workload.
+Results saved to 'vm_failure_prediction.csv'.
