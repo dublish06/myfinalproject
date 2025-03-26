@@ -4,6 +4,7 @@ from dash import dcc, html
 import plotly.graph_objects as go
 from flask import Flask
 import pandas as pd
+from imblearn.over_sampling import SMOTE
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.ensemble import IsolationForest, RandomForestClassifier
 from sklearn.cluster import KMeans
@@ -11,7 +12,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve
 
-# -------------------- Load & Preprocess Data --------------------
 df = pd.read_csv("C:/Users/sahil/OneDrive/Documents/inhouseproject2/synthetic_data.csv")
 
 # Rename columns to match expected names
@@ -28,7 +28,6 @@ df.rename(columns={
 }, inplace=True)
 df['timestamp'] = pd.date_range(start='2024-01-01', periods=len(df), freq='min')  # Generates timestamps
 
-
 # Convert necessary columns to numeric
 df["disk_utilization"] = pd.to_numeric(df["disk_utilization"], errors="coerce")
 df["uptime"] = pd.to_numeric(df["uptime"], errors="coerce")
@@ -41,11 +40,11 @@ df["memory_utilization"] = (df["used_memory"] / df["total_memory"]) * 100
 # Drop unnecessary categorical columns if not needed
 df.drop(["disk_status", "memory_status", "uptime_status", "chrony_status"], axis=1, inplace=True)
 
-
 df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
 df['timestamp'] = pd.to_datetime(df['timestamp'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
 df.dropna(subset=['timestamp', 'memory_utilization', 'uptime'], inplace=True)
 df.set_index('timestamp', inplace=True)
+df = df.asfreq('min')
 df = df.astype({'memory_utilization': 'float64', 'uptime': 'float64'})
 
 # -------------------- Memory Utilization Forecasting --------------------
@@ -65,11 +64,19 @@ df['uptime_anomaly'] = iso_forest.fit_predict(df[['uptime']])
 # -------------------- Disk Utilization Prediction --------------------
 X = df[['disk_utilization', 'memory_utilization']]
 y = (df['disk_utilization'] > 80).astype(int)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
 
+# Split data for training/testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+# Apply SMOTE for class imbalance
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X_train, y_train)
+
+# Train RandomForestClassifier
 rf_model = RandomForestClassifier(random_state=42)
-rf_model.fit(X_train, y_train)
+rf_model.fit(X_resampled, y_resampled)
+
+# Get probabilities for ROC curve
 y_prob = rf_model.predict_proba(X_test)[:, 1]
 
 # -------------------- Machine Health Scoring --------------------
@@ -78,21 +85,20 @@ X_scaled = scaler.fit_transform(X)
 kmeans = KMeans(n_clusters=3, random_state=42, n_init='auto')
 df['health_score'] = kmeans.fit_predict(X_scaled)
 
+# -------------------- ROC Curve Calculation --------------------
+from sklearn.metrics import roc_curve
+
+# Ensure no NaN or infinite values in y_prob
+y_prob = np.nan_to_num(y_prob)
+y_prob = np.clip(y_prob, 0, 1)
+
+fpr, tpr, _ = roc_curve(y_test, y_prob)
+
 # -------------------- Flask App & Dashboard --------------------
 server = Flask(__name__)
 app = dash.Dash(__name__, server=server)
-# -------------------- ROC Curve Calculation --------------------
 
-# Ensure no NaN or infinite values in y_prob
-print("NaN values in y_prob:", np.isnan(y_prob).sum())
-print("Infinite values in y_prob:", np.isinf(y_prob).sum())
-
-# Replace NaNs/Infs with 0
-y_prob = np.nan_to_num(y_prob)
-
-# Compute ROC curve
-fpr, tpr, _ = roc_curve(y_test, y_prob)
-
+# Dashboard layout
 app.layout = html.Div(children=[
     html.H1("🔹 Real-Time System Monitoring Dashboard"),
     dcc.Graph(id='memory-forecast', figure={
@@ -113,16 +119,7 @@ app.layout = html.Div(children=[
     dcc.Graph(id='health-score', figure={
         'data': [go.Heatmap(z=df['health_score'].values.reshape(-1, 1), colorscale='RdYlGn')],
         'layout': go.Layout(title="Machine Health Score Heatmap")
-    }),
-
-    dcc.Graph(id='roc-curve', figure={
-         'data': [go.Scatter(x=fpr, y=tpr, mode='lines', name="ROC Curve")],
-         'layout': go.Layout(title="Alert Prediction ROC Curve",
-                        xaxis_title="False Positive Rate",
-                        yaxis_title="True Positive Rate")
-})
-
-
+    })
 ])
 
 if __name__ == '__main__':

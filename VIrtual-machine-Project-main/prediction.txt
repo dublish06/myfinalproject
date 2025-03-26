@@ -1,0 +1,57 @@
+🔹 Class Distribution Before SMOTE:
+ Disk Status
+1    74
+0    26
+Name: count, dtype: int64
+🔹 Class Distribution After SMOTE:
+ Disk Status
+0    59
+1    59
+Name: count, dtype: int64
+🔹 Best XGBoost Parameters from RandomizedSearchCV: {'subsample': 0.8, 'scale_pos_weight': 2, 
+'n_estimators': 300, 'max_depth': 9, 'learning_rate': 0.1, 'gamma': 0.2, 'colsample_bytree': 0.8}
+🔹 Failure Prediction Accuracy (XGBoost): 0.65
+🔹 Classification Report (XGBoost):
+               precision    recall  f1-score   support
+
+           0       0.25      0.20      0.22         5
+           1       0.75      0.80      0.77        15
+
+    accuracy                           0.65        20
+   macro avg       0.50      0.50      0.50        20
+weighted avg       0.62      0.65      0.64        20
+
+🔹 Confusion Matrix (XGBoost):
+ [[ 1  4]
+ [ 3 12]]
+🔹 Failure Prediction Accuracy (Random Forest): 0.65
+🔹 Classification Report (Random Forest):
+               precision    recall  f1-score   support
+
+           0       0.25      0.20      0.22         5
+           1       0.75      0.80      0.77        15
+
+    accuracy                           0.65        20
+   macro avg       0.50      0.50      0.50        20
+weighted avg       0.62      0.65      0.64        20
+
+🔹 Confusion Matrix (Random Forest):
+ [[ 1  4]
+ [ 3 12]]
+🔹 Failure Prediction Accuracy (Logistic Regression): 0.65
+🔹 Classification Report (Logistic Regression):
+               precision    recall  f1-score   support
+
+           0       0.33      0.40      0.36         5
+           1       0.79      0.73      0.76        15
+
+    accuracy                           0.65        20
+   macro avg       0.56      0.57      0.56        20
+weighted avg       0.67      0.65      0.66        20
+
+🔹 Confusion Matrix (Logistic Regression):
+ [[ 2  3]
+ [ 4 11]]
+📊 Mean Absolute Error for Disk Utilization (%) prediction: 27.74
+📊 Mean Absolute Error for Used Memory prediction: 2321.38
+📊 Mean Absolute Error for Uptime (min) prediction: 436.39

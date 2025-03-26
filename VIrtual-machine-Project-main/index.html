@@ -114,6 +114,7 @@
                   </ol>
                 </li>
               </ul><br><br>
+              <pre id="prediction">Click "" to view the predictive aspects...</pre>
               <button id="predictiveActionBtn" class="modal-btn">Analyze Data</button>
           </div>
       </div>
@@ -166,7 +167,7 @@
                 <li><strong>Network Traffic and Bandwidth Prediction:</strong>Fluctuations in network traffic can affect latency, data transfer speeds, and system responsiveness. Forecasting models track historical bandwidth usage, peak traffic hours, and application demands to predict future network loads. This enables proactive scaling of network resources, load balancing, and bandwidth allocation to maintain stable performance during high-traffic periods.</li><br>
                 <li><strong>AI-Powered Predictive Analytics for Load Balancing:</strong>Machine learning algorithms enhance forecasting accuracy by identifying hidden trends and anomaly patterns in resource utilization. AI-driven models can predict workload shifts in multi-cloud, hybrid, and on-premises environments, enabling real-time load balancing, intelligent resource scaling, and optimized infrastructure management.</li><br>
               </ol><br><br>
-              <button id="utilizationActionBtn" class="modal-btn">VIEW INSIGHTS</button>
+              <button id="utilizationActionBtn" class="modal-btn"onclick="window.open('http://127.0.0.1:8050', '_blank')">VIEW INSIGHTS</button>
           </div>
       </div>
       
@@ -182,7 +183,7 @@
                 <li><strong>Bottleneck Identification and Trend Analysis:</strong>By analyzing historical performance trends, organizations can detect recurring issues such as slow processing, memory leaks, or inefficient storage usage. Identifying these bottlenecks allows teams to take proactive measures, such as load balancing, optimizing queries, or scaling infrastructure before performance issues escalate.</li><br>
                 <li><strong>Predictive Performance Insights:</strong>AI-driven analytics provide forecasted system behavior, helping teams anticipate resource shortages, predict failure points, and prepare for high-demand periods. These insights enable automated capacity planning, workload redistribution, and proactive system optimization to prevent downtime and maintain efficiency.</li><br>
               </ol><br><br>
-              <button id="performanceActionBtn" class="modal-btn">View Performance</button>
+              <button id="performanceActionBtn" class="modal-btn" onclick="window.open('http://127.0.0.1:8051', '_blank')">View Performance</button>
           </div>
       </div>
       
@@ -264,11 +265,16 @@ document.getElementById("decisionActionBtn").addEventListener("click", function(
         .catch(error => console.error("Error loading alerts:", error));
 });
 </script>
+  <script>
+document.getElementById("predictiveActionBtn").addEventListener("click", function() {
+    fetch("prediction.txt")  // Change this to your actual .txt file name
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("prediction").textContent = data;
+        })
+        .catch(error => console.error("Error loading alerts:", error));
+});
+</script>
 
-
-
-
-
-    
   </body>
 </html>
