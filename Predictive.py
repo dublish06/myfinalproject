@@ -68,45 +68,35 @@ xgb_model = XGBClassifier()
 
 random_search = RandomizedSearchCV(estimator=xgb_model, param_distributions=param_dist, n_iter=10,
                                    scoring='accuracy', cv=5, random_state=42, n_jobs=-1)
-
 random_search.fit(X_train_resampled, y_train_resampled)
-
 # Best parameters
 print("🔹 Best XGBoost Parameters from RandomizedSearchCV:", random_search.best_params_)
-
 # Using the best model
 best_model = random_search.best_estimator_
 y_pred = best_model.predict(X_test)
-
 # Evaluate the performance of XGBoost
 print("🔹 Failure Prediction Accuracy (XGBoost):", accuracy_score(y_test, y_pred))
 print("🔹 Classification Report (XGBoost):\n", classification_report(y_test, y_pred, zero_division=1))
 print("🔹 Confusion Matrix (XGBoost):\n", confusion_matrix(y_test, y_pred))
-
 # ========================================
 # Alternative Models (Random Forest and Logistic Regression)
 # ========================================
-
 # Random Forest Classifier
 rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
 rf_model.fit(X_train_resampled, y_train_resampled)
 y_pred_rf = rf_model.predict(X_test)
-
 # Evaluate Random Forest
 print("🔹 Failure Prediction Accuracy (Random Forest):", accuracy_score(y_test, y_pred_rf))
 print("🔹 Classification Report (Random Forest):\n", classification_report(y_test, y_pred_rf))
 print("🔹 Confusion Matrix (Random Forest):\n", confusion_matrix(y_test, y_pred_rf))
-
 # Logistic Regression
 logreg_model = LogisticRegression(random_state=42,solver='saga',max_iter=1000  )
 logreg_model.fit(X_train_resampled, y_train_resampled)
 y_pred_logreg = logreg_model.predict(X_test)
-
 # Evaluate Logistic Regression
 print("🔹 Failure Prediction Accuracy (Logistic Regression):", accuracy_score(y_test, y_pred_logreg))
 print("🔹 Classification Report (Logistic Regression):\n", classification_report(y_test, y_pred_logreg))
 print("🔹 Confusion Matrix (Logistic Regression):\n", confusion_matrix(y_test, y_pred_logreg))
-
 # ========================================
 # Feature Importance Plot for XGBoost
 plt.figure(figsize=(8, 5))
@@ -122,10 +112,8 @@ plt.show()
 
 # Selecting features for resource forecasting
 resource_features = ["Disk Utilization (%)", "Used Memory", "Uptime (min)"]
-
 # Simulating timestamps
 df["Time Index"] = range(len(df))
-
 # Forecast future disk utilization, memory usage, and uptime
 for feature in resource_features:
     X_resource = df[["Time Index"]]

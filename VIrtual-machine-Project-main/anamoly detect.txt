@@ -1,5 +1,4 @@
 
-R² Score: 1.0
 Machines at Risk of Failure:
              IP  Disk Utilization (%)  Free Memory
 0    10.0.0.84                    77         2778

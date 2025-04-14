@@ -4,7 +4,8 @@
     <title>VM</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="s+
+    tylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,7 +22,7 @@
           
           <span class="navlink"><a href="#menu">Menu</a></span>
 
-          <span class="navlink"><a href="#runScript">Launch</a></span>
+          <span class="navlink"><a href="#runScript"></a></span>
           <!--<span class="navlink"><a href="#about">About</a></span>-->
         </div>
       </div>
@@ -67,7 +68,7 @@
         <div class="container">
           <div class="card" onclick="openModal('modal1')">
               <img src="PREDICTIVE_SYSTEM_ANALYTICS.jpeg" alt="PREDICTIVE ANALYSIS">
-              <h3>PREDICTIVE ANALYSIS</h3>
+              <h3>PREDICTIVE ANALYTICS</h3>
           </div>
           <div class="card" onclick="openModal('modal2')">
               <img src="ANOMALY_DETECTION.jpeg" alt="ANOMALY DETECTION">
@@ -95,64 +96,54 @@
       <div id="modal1" class="modal">
           <div class="modal-content">
               <span class="close" onclick="closeModal('modal1')">&times;</span>
-              <h2>Predictive Analysis</h2>
-              <p>Effective system health monitoring prevents performance issues, downtime, and resource failures. The two major concerns in system performance management are overloaded machines and resources near depletion. Proactive monitoring, predictive analytics, and automated scaling ensure systems remain efficient and reliable.</p>
-              <ul>
-                <li><h3><strong>Overloaded Machines</strong></h3>
-                  <ol>
-                    <li><strong>High CPU Usage:</strong> When CPU usage exceeds safe thresholds, applications slow down, response times increase, and system performance degrades. Solutions include optimizing process execution, redistributing workloads, and implementing load balancing.</li>
-                    <li><strong>Memory Overload:</strong> Memory overload occurs when RAM consumption exceeds available capacity, leading to frequent swapping, slow performance, or application crashes. Preventive measures include optimizing database queries and implementing caching mechanisms.</li>
-                    <li><strong>Disk Overutilization:</strong> Disk space exhaustion slows down read/write operations. Preventive strategies include automating log cleanup and expanding storage capacity.</li>
-                    <li><strong>Threshold-Based Alerts & Scaling:</strong> Automated alerts and dynamic scaling prevent system overload by ensuring timely intervention.</li>
-                  </ol>
+              <h2>Predictive Analytics</h2>
+<p>This model is designed to predict disk failures identification performance based on various system parameters, such as disk utilization, memory usage, and uptime. This model ensures that imbalanced failure data is handled using SMOTE (Synthetic Minority Over-sampling Technique) to balance the dataset.</p>
+
+<p> This model also includes alternative classifiers like Random Forest and Logistic Regression for comparison and evaluation. This model assesses performance using accuracy score, classification report, and confusion matrix.</p>
+<p> Also tells the performance of failure prediction by including predictive analytics for resource management. This model simulates a time-based dataset and applies Linear Regression models to forecast system parameters such as disk utilization, memory usage, and uptime. This model evaluates forecasting accuracy using Mean Absolute Error (MAE) to measure the difference between predicted and actual values. This model ultimately provides a comprehensive solution for system monitoring, enabling proactive failure prevention and resource optimization through machine learning.
+</p>
                 </li>
-                <li><h3><strong>Resources Near Depletion</strong></h3>
-                  <ol>
-                    <li><strong>Disk Space Prediction:</strong> Running out of disk space causes failed transactions and system crashes. Solutions include scheduled log rotation and data archiving.</li>
-                    <li><strong>Memory Utilization Forecasting:</strong> Memory shortages impact system stability. Solutions include optimizing memory-intensive operations and implementing intelligent caching strategies.</li>
-                    <li><strong>Predictive Analytics for Resource Management:</strong> Machine learning-based predictive analytics enhances system monitoring by analyzing past trends and forecasting future resource needs.</li>
-                  </ol>
-                </li>
-              </ul><br><br>
-              <pre id="prediction">Click "" to view the predictive aspects...</pre>
+              </ul>
+              <br><br>
+              <pre id="prediction">Click "Analyze Data" to view the predictive aspects...</pre>
               <button id="predictiveActionBtn" class="modal-btn">Analyze Data</button>
           </div>
       </div>
-      
+
       <!-- Modal for ANOMALY DETECTION-->
       <div id="modal2" class="modal">
-          <div class="modal-content">
-              <span class="close" onclick="closeModal('modal2')">&times;</span>
-              <h3>Anomaly Detection</h3>
-              <p>Anomaly detection is a critical aspect of system monitoring that helps identify unexpected behavior, sudden resource spikes, and potential failures before they impact operations. By analyzing patterns in system performance, anomaly detection tools can detect unusual CPU, memory, disk, or network activity, allowing administrators to take corrective action before issues escalate.</p>
-              <ol>
-                <li><strong>Sudden Spikes in Resource Utilization:</strong> A sudden increase in CPU, memory, or disk usage often indicates unoptimized processes, excessive background tasks, or malicious activities such as a cyberattack or a faulty update. If left unaddressed, these spikes can lead to system slowdowns, crashes, or security vulnerabilities. Continuous monitoring helps detect anomalies in real time, triggering alerts that allow quick intervention. Preventive measures include load balancing, process optimization, and security audits to ensure that resource spikes do not disrupt operations.</li><br>
-                <li><strong>Unexpected Downtime:</strong>Unexpected system failures, server crashes, or application freezes can disrupt business operations and result in data loss. Anomalies in system logs, error rates, or API response times often indicate an impending failure or configuration issue. Machine learning models trained on historical data can predict failures before they occur, allowing administrators to take preventive actions such as infrastructure scaling, patching, or restarting failing services.</li><br>
-                <li><strong>Unusual Network Activity:</strong> Abnormal spikes in network traffic, unexpected data transfers, or frequent failed authentication attempts may indicate a DDoS attack, unauthorized access, or a misconfigured service. Detecting anomalies in network logs helps prevent security breaches and ensures data integrity. Implementing firewall rules, intrusion detection systems (IDS), and automated response mechanisms can mitigate risks and prevent unauthorized system access.</li><br>
-                <li><strong>Predictive Anomaly Detection Using AI:</strong> Advanced machine learning algorithms analyze system metrics over time to detect anomalies before they cause failures. Time-series forecasting models can identify deviations from normal behavior, while unsupervised learning techniques such as clustering and autoencoders help uncover hidden patterns in system logs. By integrating AI-driven anomaly detection, organizations can enhance monitoring accuracy, reduce manual workload, and improve response times to potential threats.</li><br>
-              </ol><br><br>
-              <pre id="anamolydetect">Click "Detect Anomalies" to view which machine is about to fail...</pre>
-              <button id="anomalyActionBtn" class="modal-btn">Detect Anomalies</button>
-          </div>
-      </div>
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h3>Anomaly Detection</h3>
+        <p>Anomaly detection plays a crucial role in monitoring system health and identifying performance risks before they escalate. By analyzing historical and real-time data, it helps detect abnormal resource utilization, potential failures, and security threats, enabling timely intervention.</p>
+        <ol>
+            <li><strong>System Health & Performance Risks:</strong> Detects abnormal CPU, memory, and disk usage that could indicate performance degradation or impending failures. Ensures early intervention to maintain system stability.</li><br>
+            <li><strong>Failure Prediction & Preventive Maintenance:</strong> Identifies early warning signs of system failures, enabling proactive maintenance to prevent downtime and optimize system performance.</li><br>
+            <li><strong>Resource Optimization:</strong> Helps balance workloads, optimize resource allocation, and improve capacity planning, ensuring efficient system utilization.</li><br>
+            <li><strong>Security & Threat Detection:</strong> Monitors system behavior for unusual activity, detects security threats such as unauthorized access or network anomalies, and helps mitigate risks proactively.</li><br>
+        </ol><br><br>
+        <pre id="anamolydetect">Click "Detect Anomalies" to view which machine is about to fail...</pre>
+        <button id="anomalyActionBtn" class="modal-btn">Detect Anomalies</button>
+    </div>
+</div>
+
       
       <!-- Modal for Proactive Alerts -->
       <div id="modal3" class="modal">
           <div class="modal-content">
               <span class="close" onclick="closeModal('modal3')">&times;</span>
               <h3>Proactive Alerts</h3>
-              <p>Proactive alerts enable real-time detection of critical system conditions, allowing administrators to take preventive action before issues impact performance. Unlike reactive alerts, which notify users after a failure occurs, proactive alerts predict potential failures and trigger warnings based on historical trends, predefined thresholds, and anomaly detection mechanisms. These alerts help maintain system stability, prevent downtime, and optimize resource utilization.</p>
+              <p>Alerts - This module is designed to analyze system resource utilization and predict potential issues based on historical and current data, generates alerts and warnings based on system resource usage predictions and uptime stability for each system/device in the dataset.</p>
               <ol>
-                <li><strong>Predictive Memory Utilization Alerts</strong>Memory-intensive applications can lead to performance degradation if consumption exceeds safe limits. Proactive alerts analyze historical memory usage trends and predict when utilization is likely to surpass a critical threshold. By detecting early warning signs, such as a steady increase in memory consumption or frequent swapping, alerts allow administrators to optimize resource allocation, clear unnecessary processes, or scale memory resources dynamically before the system slows down or crashes.</li><br>
-                <li><strong>CPU and Load Monitoring Alerts:</strong>High CPU usage can cause delays, application failures, or complete system unresponsiveness. Proactive alerts monitor CPU load over time, detecting unusual spikes or consistent overutilization. If an alert predicts that CPU usage will exceed a critical level within a specific timeframe, administrators can optimize workload distribution, enable auto-scaling, or adjust process priorities to prevent system slowdowns. These alerts help maintain performance efficiency and prevent overload-related crashes.</li><br>
-                <li><strong>Disk Space Utilization Alerts:</strong> Running out of disk space can lead to failed write operations, application errors, and data loss. Proactive disk space alerts analyze usage trends to estimate when available storage will be exhausted. Instead of waiting for storage to run out, these alerts notify teams well in advance, enabling automated log cleanup, data archiving, and storage expansion before disk depletion affects system operations.</li><br>
-                <li><strong>System Uptime & Stability Alerts:</strong>Frequent restarts, unplanned downtimes, or irregular uptime patterns may indicate hardware failures, unstable configurations, or software bugs. Proactive uptime alerts monitor system health and detect irregular shutdown patterns before they escalate into major outages. By identifying systems with recurring instability, these alerts help administrators troubleshoot hardware issues, patch software vulnerabilities, and optimize infrastructure for improved reliability.</li><br>
-                <li><strong>Automated Alerting and Response Systems:</strong>Proactive alerts become more effective when combined with automated incident response mechanisms. AI-powered monitoring tools can analyze alerts in real-time and trigger automated responses, such as scaling resources, restarting services, or blocking suspicious activities. This reduces manual intervention and ensures faster resolution of potential issues.</li><br>
+                <li><strong>Predictive Memory Utilization Alerts:</strong> If the predicted memory usage for a system exceeds 80% within the next hour (or whatever future time is set), an alert is triggered, indicating that the system's memory is predicted to become critically high.</li><br>
+                <li><strong>Uptime Stability Alerts:</strong> If the system's uptime is less than 500 minutes and its uptime status is marked as "Fail," it triggers a warning indicating potential instability or failure in uptime.</li><br>
+                <li><strong>Actionable Insights:</strong> The output can be used to take corrective actions, such as sending alerts to admins, initiating system optimizations, or investigating potential downtime issues.</li><br>
               </ol><br><br>
               <pre id="alertContent">Click "Set Alerts" to view live alerts...</pre>
               <button id="alertsActionBtn" class="modal-btn">Set Alerts</button>
           </div>
       </div>
+
       
       <!-- Modal for Utilization Insights -->
       <div id="modal4" class="modal">
@@ -189,20 +180,21 @@
       
       <!-- Modal for Decision Support -->
       <div id="modal6" class="modal">
-          <div class="modal-content">
-              <span class="close" onclick="closeModal('modal6')">&times;</span>
-              <h3>Decision Support</h3>
-              <p>Decision support systems provide actionable recommendations based on predicted system issues, enabling administrators to make informed choices that enhance performance, stability, and efficiency. By analyzing resource utilization trends, anomaly patterns, and predictive analytics, decision support mechanisms help proactively resolve potential problems before they impact operations.</p>
-              <ol>
-                <li><strong>Intelligent Workload Reallocation:</strong>When system performance predictions indicate an overloaded CPU, memory bottleneck, or uneven resource distribution, decision support suggests shifting workloads to underutilized nodes. This ensures optimal processing efficiency, prevents performance degradation, and reduces the risk of system crashes. Workload balancing strategies may involve auto-scaling, container orchestration, or dynamic task scheduling.</li><br>
-                <li><strong>Resource Scaling and Capacity Expansion:</strong> Predictive analytics detect when a system is approaching resource exhaustion, such as disk space running low, memory nearing capacity, or network bandwidth congestion. Based on these insights, decision support recommends adding resources, upgrading hardware, or allocating additional cloud instances to maintain smooth operations. Scaling strategies can include vertical scaling (upgrading existing machines) or horizontal scaling (adding more machines).</li><br>
-                <li><strong>Configuration Optimization for Performance Efficiency:</strong>Suboptimal system configurations can lead to slow response times, inefficient resource usage, and increased downtime. Decision support analyzes historical performance data and real-time metrics to recommend tuning parameters, adjusting caching mechanisms, optimizing database queries, or refining system policies. These improvements enhance overall system responsiveness and reduce unnecessary resource consumption.</li><br>
-                <li><strong>Automated Decision-Making with AI Integration:</strong>AI-driven decision support systems use machine learning algorithms to provide real-time recommendations and even automate corrective actions. By continuously learning from system behavior, AI can predict potential failures, suggest preemptive actions, and trigger automated responses, such as scaling resources, restarting failing services, or reallocating traffic loads to maintain performance stability.</li><br>
-              </ol>
-              <pre id="workloadpred">Click to view workload distribution...</pre>
-              <button id="decisionActionBtn" class="modal-btn">Make Decision</button>
-          </div>
-      </div>
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal6')">&times;</span>
+        <h3>Decision Support</h3>
+        <p>Decision support systems help administrators make data-driven choices by analyzing workload distribution, resource utilization, and system health. By leveraging predictive analytics, these systems enable proactive management to optimize performance and efficiency.</p>
+        <ol>
+            <li><strong>Identification of Underutilized Resources:</strong> Detects VMs or servers with low disk usage and high available memory, highlighting inefficiencies that lead to wasted computational resources.</li><br>
+            <li><strong>Identification of Overworked Resources:</strong> Identifies VMs or servers experiencing high disk usage and low free memory, signaling potential risks of system failure due to prolonged high loads.</li><br>
+            <li><strong>Workload Redistribution Suggestions:</strong> Provides recommendations to balance workloads by shifting tasks from overworked machines to underutilized ones, ensuring stability, efficiency, and preventing failures.</li><br>
+            <li><strong>System Health & Stability:</strong> Maintains overall system stability by preventing overload-related failures and ensuring better performance for mission-critical applications.</li><br>
+        </ol>
+        <pre id="workloadpred">Click to view workload distribution...</pre>
+        <button id="decisionActionBtn" class="modal-btn">Make Decision</button>
+    </div>
+</div>
+
       
       <script>
           function openModal(id) {
@@ -216,11 +208,6 @@
       </div>
       <br><br>
       <!--LAUNCH BUTTON CODE-->
-      <div style="display: flex; justify-content: center; align-items: center; ">
-        <button id="runScript"  style="display: flex; align-items: center; padding: 12px 48px; border-radius: 16px; font-family: 'Poppins', sans-serif; font-size: 16px; color: white; background: rgba(48, 129, 237, 0.9); border: none; cursor: pointer;">Launch Now</button>
-        <p id="response"></p>
-
-      </div>
       
       <br><br><br><br>
 

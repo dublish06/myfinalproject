@@ -8,8 +8,6 @@ Name: count, dtype: int64
 0    59
 1    59
 Name: count, dtype: int64
-🔹 Best XGBoost Parameters from RandomizedSearchCV: {'subsample': 0.8, 'scale_pos_weight': 2, 
-'n_estimators': 300, 'max_depth': 9, 'learning_rate': 0.1, 'gamma': 0.2, 'colsample_bytree': 0.8}
 🔹 Failure Prediction Accuracy (XGBoost): 0.65
 🔹 Classification Report (XGBoost):
                precision    recall  f1-score   support

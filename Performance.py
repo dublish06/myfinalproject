@@ -95,8 +95,6 @@ def update_forecast_graph(n):
     ))
     fig.update_layout(title="Memory Usage Forecast (Linear Regression)")
     return fig
-
-
 # Callback to generate bottleneck analysis
 @app.callback(
     Output('bottleneck_graph', 'figure'),

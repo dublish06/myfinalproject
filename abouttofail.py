@@ -52,23 +52,18 @@ y_pred = clf.predict(X_test)
 print("Classification Report:\n", classification_report(y_test, y_pred))
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
-
 print("\nMean Squared Error:", mse)
 print("R² Score:", r2)
-
 # Predict failures on all machines
 df['Predicted_Failure'] = clf.predict(X_scaled)
-
 # Identify at-risk machines
 at_risk_vms = df[df['Predicted_Failure'] == 1]
 print("Machines at Risk of Failure:\n", at_risk_vms[['IP', 'Disk Utilization (%)', 'Free Memory']])
-
 # Alert users about resource allocation
 if not at_risk_vms.empty:
     print("\n⚠️ ALERT: The following machines need more resources to prevent failure ⚠️")
     for index, vm in at_risk_vms.iterrows():
         print(f"⚠️ Machine {vm['IP']} is at risk. Consider adding more memory or balancing its workload.")
-
 # Save results
 df.to_csv("vm_failure_prediction.csv", index=False)
 print("Results saved to 'vm_failure_prediction.csv'.")

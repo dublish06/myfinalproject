@@ -214,47 +214,7 @@ plt.xticks(range(X.shape[1]), X.columns[indices], rotation=90)
 plt.tight_layout()
 plt.show()
 
-vm_data = [10.0, 50, 1500, 800, 500, 30, 1, 1]  # Ensure this has exactly 8 features matching the scaler
 
-
-def predict_overload(vm_data):
-    # Align vm_data to the required feature set
-    vm_data_aligned = vm_data[:8]  # Take only the first 8 features
-
-    # Scale the input data
-    vm_data_aligned = np.array(vm_data_aligned).reshape(1, -1)  # Convert it to 2D array for scaling (1 row, n columns)
-
-    # Transform the data using the scaler
-    vm_data_scaled = scaler.transform(vm_data_aligned)  # Now it should be a 2D array with 8 features
-
-    # Use your trained model to predict
-    prediction = model.predict(vm_data_scaled)  # This should call the predict method and pass the scaled input
-
-    return prediction
-
-
-
-# Function to distribute workload
-def distribute_workload(vm_ip):
-    print(f"VM with IP {vm_ip} is overloaded. Distributing workload...")
-
-
-# Example VM data for testing the function
-# Example new VM data (this should be a list or a 1D array)
-new_vm_data = [10.0, 50, 1500, 800, 500, 30, 1, 0]  # Replace this with actual data for the new VM
-
-# Predict if the new VM is overloaded
-result = predict_overload(new_vm_data)
-print(f"The VM is {result}")
-
-
-# Inform the user about the VM overload
-if result > 80:  # Now comparing the actual predicted value with 80
-    # Assuming 80 as the overload threshold
-    distribute_workload("10.0.0.1")  # Example VM IP to distribute work
-
-else:
-    print("This VM is operating normally.")
 
 
 
